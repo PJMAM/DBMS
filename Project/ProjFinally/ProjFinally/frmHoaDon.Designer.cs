@@ -39,10 +39,6 @@ namespace ProjFinally
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,7 +60,6 @@ namespace ProjFinally
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,6 +75,7 @@ namespace ProjFinally
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(284, 22);
             this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox1
             // 
@@ -88,6 +84,7 @@ namespace ProjFinally
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(284, 22);
             this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -134,6 +131,7 @@ namespace ProjFinally
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(322, 22);
             this.textBox6.TabIndex = 16;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox3
             // 
@@ -168,60 +166,20 @@ namespace ProjFinally
             this.label4.Location = new System.Drawing.Point(31, 60);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Ngày bán:";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(51, 710);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(548, 32);
-            this.panel1.TabIndex = 136;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(416, 4);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(111, 28);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 6);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(289, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã hoá đơn ";
+            this.label4.Text = "Ngày lập HD:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(786, 714);
+            this.button1.Location = new System.Drawing.Point(719, 384);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 32);
             this.button1.TabIndex = 139;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -235,6 +193,7 @@ namespace ProjFinally
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBox12);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.textBox11);
@@ -265,6 +224,7 @@ namespace ProjFinally
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(236, 22);
             this.textBox12.TabIndex = 27;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label15
             // 
@@ -349,6 +309,7 @@ namespace ProjFinally
             this.btnLuuHoaDon.TabIndex = 4;
             this.btnLuuHoaDon.Text = "Sửa";
             this.btnLuuHoaDon.UseVisualStyleBackColor = true;
+            this.btnLuuHoaDon.Click += new System.EventHandler(this.btnLuuHoaDon_Click);
             // 
             // btnHuyHoaDon
             // 
@@ -359,6 +320,7 @@ namespace ProjFinally
             this.btnHuyHoaDon.TabIndex = 5;
             this.btnHuyHoaDon.Text = "Xóa";
             this.btnHuyHoaDon.UseVisualStyleBackColor = true;
+            this.btnHuyHoaDon.Click += new System.EventHandler(this.btnHuyHoaDon_Click);
             // 
             // btnInHoaDon
             // 
@@ -379,6 +341,7 @@ namespace ProjFinally
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(886, 242);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnThemHoaDon
             // 
@@ -389,6 +352,7 @@ namespace ProjFinally
             this.btnThemHoaDon.TabIndex = 3;
             this.btnThemHoaDon.Text = "Thêm ";
             this.btnThemHoaDon.UseVisualStyleBackColor = true;
+            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
             // 
             // panel4
             // 
@@ -427,9 +391,7 @@ namespace ProjFinally
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 746);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(969, 708);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -437,10 +399,9 @@ namespace ProjFinally
             this.Name = "frmHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin Hóa đơn";
+            this.Load += new System.EventHandler(this.frmHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -463,10 +424,6 @@ namespace ProjFinally
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox2;

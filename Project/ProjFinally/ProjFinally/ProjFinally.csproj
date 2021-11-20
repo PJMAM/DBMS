@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HOADON.cs" />
+    <Compile Include="DataConnection.cs" />
     <Compile Include="frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
