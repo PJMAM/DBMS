@@ -12,7 +12,7 @@ namespace ProjFinally
 {
     public partial class frmHoaDon : Form
     {
-        //
+        
         HOADONBLL bllhoadon;
         //
         public frmHoaDon()
@@ -34,13 +34,9 @@ namespace ProjFinally
         // Button Thoat
         private void button1_Click(object sender, EventArgs e)
         {
-            // Khai báo biến traloi
-            DialogResult traloi;
-            // Hiện hộp thoại hỏi đáp
-            traloi = MessageBox.Show("Bạn muốn thoát không?", "Trả lời",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            // Kiểm tra có nhắp chọn nút Ok không?
-            if (traloi == DialogResult.OK) Application.Exit();
+            frmMainQL fm = new frmMainQL();
+            Hide();
+            fm.ShowDialog();
         }
 
         //
@@ -218,6 +214,13 @@ namespace ProjFinally
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            frmChiTietHoaDon frmchitiethd = new frmChiTietHoaDon();
+            Hide();
+            frmchitiethd.ShowDialog();
         }
     }
 }

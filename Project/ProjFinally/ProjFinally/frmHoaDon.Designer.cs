@@ -177,7 +177,7 @@ namespace ProjFinally
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 32);
             this.button1.TabIndex = 139;
-            this.button1.Text = "Thoát";
+            this.button1.Text = "Trở về ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -331,6 +331,7 @@ namespace ProjFinally
             this.btnInHoaDon.TabIndex = 6;
             this.btnInHoaDon.Text = "In hoá đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // dataGridView1
             // 

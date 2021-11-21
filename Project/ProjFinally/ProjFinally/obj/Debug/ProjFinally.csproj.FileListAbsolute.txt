@@ -67,3 +67,5 @@ D:\Git\DBMS\DBMS\Project\ProjFinally\ProjFinally\obj\Debug\ProjFinally.pdb
 D:\Git\DBMS\DBMS\Project\ProjFinally\ProjFinally\bin\Debug\ProjFinally.exe.config
 D:\Git\DBMS\DBMS\Project\ProjFinally\ProjFinally\bin\Debug\ProjFinally.exe
 D:\Git\DBMS\DBMS\Project\ProjFinally\ProjFinally\bin\Debug\ProjFinally.pdb
+D:\Git\DBMS\DBMS\Project\ProjFinally\ProjFinally\obj\Debug\Interop.ADODB.dll
+D:\Git\DBMS\DBMS\Project\ProjFinally\ProjFinally\obj\Debug\ProjFinally.csproj.ResolveComReference.cache

@@ -66,6 +66,7 @@ namespace ProjFinally
         //  Do du lieu vao datatable cho view them , xoa , sua
         public DataTable getAllHOADON()
         {
+            
             // Tạo câu lệnh truy vấn lấy toàn bộ view THONGKEBANHANG
             string sql = "SELECT * FROM THONGKEBANHANG";
             // Tạo một kết nối đến sql
