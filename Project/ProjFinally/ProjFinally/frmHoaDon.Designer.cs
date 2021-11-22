@@ -59,6 +59,7 @@ namespace ProjFinally
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +71,7 @@ namespace ProjFinally
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 58);
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 62);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(284, 22);
@@ -192,6 +193,7 @@ namespace ProjFinally
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBox12);
@@ -329,7 +331,7 @@ namespace ProjFinally
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(164, 32);
             this.btnInHoaDon.TabIndex = 6;
-            this.btnInHoaDon.Text = "In hoá đơn";
+            this.btnInHoaDon.Text = "Tìm kiếm";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
             this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
@@ -351,7 +353,7 @@ namespace ProjFinally
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(164, 32);
             this.btnThemHoaDon.TabIndex = 3;
-            this.btnThemHoaDon.Text = "Thêm ";
+            this.btnThemHoaDon.Text = "Thêm Hóa Đơn";
             this.btnThemHoaDon.UseVisualStyleBackColor = true;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
             // 
@@ -387,6 +389,19 @@ namespace ProjFinally
             this.label1.TabIndex = 3;
             this.label1.Text = "HOÁ ĐƠN BÁN HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(33, 336);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(164, 32);
+            this.button2.TabIndex = 140;
+            this.button2.Text = "Thêm Sản Phẩm";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // frmHoaDon
             // 
@@ -445,5 +460,6 @@ namespace ProjFinally
         private System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
