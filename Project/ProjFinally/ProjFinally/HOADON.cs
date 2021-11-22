@@ -47,6 +47,14 @@ namespace ProjFinally
         {
             return dalhoadon.DeleteHOADON(hoadon);
         }
+        public bool InsertSANPHAM(HOADON hoadon)
+        {
+            return dalhoadon.InsertSANPHAM(hoadon);
+        }
+        public bool DeleteSANPHAM(HOADON hoadon)
+        {
+            return dalhoadon.DeleteSANPHAM(hoadon);
+        }
 
     }
 
@@ -84,7 +92,7 @@ namespace ProjFinally
 
         }
 
-        // Chuc nang them vao
+        // Chuc nang them vao hoa don moi
         public bool InsertHOADON(HOADON hoadon)
         {
             string sql = "exec taoHOADON @NgayLapHD, @MaNV, @MaKH , @MaSP, @SoLuong, @Gia, @MucGiamGia";
@@ -96,6 +104,29 @@ namespace ProjFinally
                 cmd.Parameters.Add("@NgayLapHD", SqlDbType.DateTime).Value = hoadon.NgayLapHD;
                 cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar).Value = hoadon.MaNV;
                 cmd.Parameters.Add("@MaKH", SqlDbType.NVarChar).Value = hoadon.MaKH;
+                cmd.Parameters.Add("@MaSP", SqlDbType.NVarChar).Value = hoadon.MaSP;
+                cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = hoadon.SoLuong;
+                cmd.Parameters.Add("@Gia", SqlDbType.Int).Value = hoadon.Gia;
+                cmd.Parameters.Add("@MucGiamGia", SqlDbType.Int).Value = hoadon.MucGiamGia;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
+        // Chuc nang them vao san pham cho hoa don chi tiet
+        public bool InsertSANPHAM(HOADON hoadon)
+        {
+            string sql = "exec addCHITIETHD_ID @MaSP,@MaHD,@SoLuong, @Gia, @MucGiamGia";
+            SqlConnection con = dc.GetConnection();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@MaHD", SqlDbType.Int).Value = hoadon.MaHD;                           
                 cmd.Parameters.Add("@MaSP", SqlDbType.NVarChar).Value = hoadon.MaSP;
                 cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = hoadon.SoLuong;
                 cmd.Parameters.Add("@Gia", SqlDbType.Int).Value = hoadon.Gia;
@@ -137,7 +168,7 @@ namespace ProjFinally
             return true;
         }
 
-        // Chuc nang xoa
+        // Chuc nang xoa hoa don
         public bool DeleteHOADON(HOADON hoadon)
         {
             string sql = "exec xoaHOADON @MaHD";
@@ -156,7 +187,26 @@ namespace ProjFinally
             }
             return true;
         }
-
+        // Chuc nang xoa san pham
+        public bool DeleteSANPHAM(HOADON hoadon)
+        {
+            string sql = "exec deleteCHITIETHD_SANPHAM @MaHD,@MaSP";
+            SqlConnection con = dc.GetConnection();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@MaHD", SqlDbType.Int).Value = hoadon.MaHD;
+                cmd.Parameters.Add("@MaSP", SqlDbType.NVarChar).Value = hoadon.MaSP;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 
 

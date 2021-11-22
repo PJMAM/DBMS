@@ -91,5 +91,36 @@ namespace ProjFinally
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string MaKhachHang = textBox1.Text;
+            string MaHD = textBox3.Text;
+            //  Tao Connection
+            SqlDataAdapter da;
+            DataConnection cnn = new DataConnection();
+            //
+            // Tạo câu lệnh truy vấn lấy toàn bộ view THONGKEBANHANG noi MaKH = MaKhachHang
+            string sql = "SELECT * FROM THONGKEBANHANG WHERE MaKH LIKE N'%" + MaKhachHang + "%' and MaHD LIKE '%" + MaHD + "%' ";
+            // Tạo một kết nối đến sql
+            SqlConnection con = cnn.GetConnection();
+            // khởi tạo đối tượng của lớp SqlDataAdapter
+            da = new SqlDataAdapter(sql, con);
+            //mở kết nối
+            con.Open();
+            // Đổ dữ liệu từ sqlDataAdapter vào DataTable
+            DataTable dtt = new DataTable();
+            da.Fill(dtt);
+            // Đóng kết nối
+            con.Close();
+            dataGridView1.DataSource = dtt;
+
+            int tong = 0;
+            foreach (DataRow row in dtt.Rows)
+            {
+                tong = tong + Convert.ToInt32(row["ThanhTien"]);
+            }
+            textBox2.Text = tong.ToString();
+        }
     }
 }

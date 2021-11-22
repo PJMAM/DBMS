@@ -222,5 +222,51 @@ namespace ProjFinally
             Hide();
             frmchitiethd.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                HOADON hoadon = new HOADON();
+                hoadon.MaHD = int.Parse(textBox1.Text);
+                hoadon.NgayLapHD = DateTime.Parse(dateTimePicker1.Text);
+                hoadon.MaNV = textBox3.Text;
+                hoadon.MaKH = textBox6.Text;
+                hoadon.MaSP = textBox2.Text;
+                hoadon.SoLuong = int.Parse(textBox7.Text);
+                hoadon.Gia = int.Parse(textBox11.Text);
+                hoadon.MucGiamGia = int.Parse(textBox8.Text);
+
+                if (bllhoadon.InsertSANPHAM(hoadon))
+                {
+                    ShowAllHOADON();
+                }
+                else
+                    MessageBox.Show("Đã xảy ra lỗi , xin thử lại sau", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                HOADON hoadon = new HOADON();
+                hoadon.MaHD = int.Parse(textBox1.Text);
+                hoadon.NgayLapHD = DateTime.Parse(dateTimePicker1.Text);
+                hoadon.MaNV = textBox3.Text;
+                hoadon.MaKH = textBox6.Text;
+                hoadon.MaSP = textBox2.Text;
+                hoadon.SoLuong = int.Parse(textBox7.Text);
+                hoadon.Gia = int.Parse(textBox11.Text);
+                hoadon.MucGiamGia = int.Parse(textBox8.Text);
+
+                if (bllhoadon.DeleteSANPHAM(hoadon))
+                {
+                    ShowAllHOADON();
+                }
+                else
+                    MessageBox.Show("Đã xảy ra lỗi , xin thử lại sau", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }
